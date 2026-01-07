@@ -11,7 +11,7 @@ export default async function Chatbot() {
         enabled: cmsConfig?.enabled ?? true, // Default to true if missing in old config
         window_title: cmsConfig?.window_title || process.env.NEXT_PUBLIC_CHATBOT_TITLE || 'Assistant',
         flow_id: cmsConfig?.flow_id || process.env.NEXT_PUBLIC_CHATBOT_FLOW_ID || '',
-        host_url: cmsConfig?.host_url || process.env.NEXT_PUBLIC_CHATBOT_HOST || 'https://www.cerebroaifalabs.com/api/flowai',
+        host_url: cmsConfig?.host_url || process.env.NEXT_PUBLIC_CHATBOT_HOST || 'https://www.cerebroaifalabs.com',
         api_key: cmsConfig?.api_key || process.env.NEXT_PUBLIC_CHATBOT_API_KEY || ''
     };
 
@@ -22,7 +22,7 @@ export default async function Chatbot() {
     return (
         <>
             <Script
-                src="https://cdn.jsdelivr.net/gh/langflow-ai/langflow-embedded-chat@main/dist/build/static/js/bundle.min.js"
+                src="https://cdn.jsdelivr.net/gh/langflow-ai/langflow-embedded-chat@v1.0.8/dist/build/static/js/bundle.min.js"
                 strategy="afterInteractive"
             />
             <ChatbotWrapper config={config} />
