@@ -54,13 +54,14 @@ export default function ChatbotWrapper({ config }: { config: ChatbotConfig }) {
             // Apply Styling via JSON props if supported by this version
             // This was previously causing issues when passed as attributes
             try {
-                el.chat_window_style = JSON.stringify({
+                // Construct the element string
+                const styleConfig = {
                     width: '100%',
                     height: '100%',
                     backgroundColor: '#0b1021',
                     color: '#ffffff'
-                });
-                // el.chat_trigger_style = ... (Not used since we have our own launcher)
+                };
+                el.chat_window_style = styleConfig;
             } catch (err) {
                 console.error("Failed to apply styles to langflow-chat:", err);
             }
@@ -111,24 +112,24 @@ export default function ChatbotWrapper({ config }: { config: ChatbotConfig }) {
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                        className="flex flex-col shadow-2xl rounded-lg overflow-hidden border border-white/10 bg-[#0b1021]"
-                        style={{
-                            width: '400px',
-                            height: '600px',
-                            maxHeight: '80vh',
-                            maxWidth: '90vw',
-                            display: 'flex',
-                            flexDirection: 'column'
-                        }}
+                        className="flex flex-col shadow-2xl rounded-lg overflow-hidden border border-white/10 bg-[#0b1021] w-[500px] h-[750px] max-h-[85vh] max-w-[90vw]"
                     >
-                        {/* CLOSE BUTTON (Absolute Overlay) */}
-                        <button
-                            onClick={toggleOpen}
+                        {/* HEADER (Drag Handle) */}
+                        <div
                             onPointerDown={(e) => controls.start(e)}
-                            className="absolute top-2 right-2 z-10 text-white/50 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-1 transition-colors backdrop-blur-sm"
+                            className="bg-[#1a1f3c] p-3 flex justify-between items-center cursor-move border-b border-white/5 select-none shrink-0 h-[50px]"
                         >
-                            <X size={20} />
-                        </button>
+                            <div className="flex items-center gap-2 text-white/70">
+                                <GripVertical size={16} />
+                                <span className="text-sm font-medium">Chat</span>
+                            </div>
+                            <button
+                                onClick={toggleOpen}
+                                className="text-white/50 hover:text-white transition-colors p-1 hover:bg-white/10 rounded cursor-pointer"
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
 
                         {/* CONTENT AREA */}
                         <div className="flex-1 w-full h-full bg-[#0b1021]">
@@ -177,6 +178,9 @@ export default function ChatbotWrapper({ config }: { config: ChatbotConfig }) {
                                             console.warn("Could not set chat_window_style", e);
                                         }
 
+                                        // Inject custom styles to hide internal headers/close buttons
+                                        injectShadowStyles(chatElement);
+
                                         // Store ref to chat element if needed for cleanup?
                                         if (chatRef) {
                                             (chatRef as any).current = chatElement;
@@ -190,4 +194,36 @@ export default function ChatbotWrapper({ config }: { config: ChatbotConfig }) {
             </AnimatePresence>
         </motion.div>
     );
+}
+
+// Helper to inject styles into shadow root
+function injectShadowStyles(element: HTMLElement) {
+    const checkShadow = setInterval(() => {
+        if (element.shadowRoot) {
+            const style = document.createElement('style');
+            style.textContent = `
+                /* Hide internal headers to prevent double headers */
+                header, .header, .chat-header {
+                    display: none !important;
+                }
+                /* Hide the internal close button (often absolute positioned or distinct) */
+                button[aria-label*="close" i], 
+                button[class*="close" i],
+                .close-button {
+                    display: none !important;
+                }
+                /* Hide the specific blue floating action button if it's the close button */
+                button:has(svg.lucide-x),
+                button:has(path[d*="M18 6 6 18"]),
+                button:has(path[d*="m18 6-12 12"]) {
+                    display: none !important;
+                }
+            `;
+            element.shadowRoot.appendChild(style);
+            clearInterval(checkShadow);
+        }
+    }, 50); // Check every 50ms
+
+    // Clear interval after 5 seconds to prevent infinite running if no shadow root
+    setTimeout(() => clearInterval(checkShadow), 5000);
 }
