@@ -1,0 +1,13 @@
+{
+  "name": "sasa",
+  "title": {
+    "en": "SAP AI SDLC Assist (SASA)",
+    "tr": "SAP YZ SDLC Asistanı (SASA)"
+  },
+  "description": {
+    "en": "AI-powered SDLC automation and migration platform specifically designed for SAP environments.",
+    "tr": "SAP ortamları için özel olarak tasarlanmış YZ destekli SDLC otomasyon ve taşıma platformu."
+  },
+  "icon": "Database",
+  "image": "https://cdn.prod.website-files.com/659ab33ddfa99d9cee1363da/661e90aeee3ab20c914b91c0_erp.webp"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "flow-ai",
+  "title": {
+    "en": "Flow AI",
+    "tr": "Flow AI"
+  },
+  "description": {
+    "en": "A low-code/no-code environment for building and automating complex AI workflows.",
+    "tr": "Karmaşık YZ iş akışlarını oluşturmak ve otomatikleştirmek için düşük kodlu/kodsuz bir ortam."
+  },
+  "icon": "Workflow",
+  "image": "https://cdn.prod.website-files.com/659ab33ddfa99d9cee1363da/68975721452b28e4e29a112f_Agentic%20AI%20Cover.webp"
+}

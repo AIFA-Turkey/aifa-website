@@ -1,0 +1,12 @@
+{
+  "name": "drafty-ai",
+  "title": {
+    "en": "Drafty AI",
+    "tr": "Drafty AI"
+  },
+  "description": {
+    "en": "AI-assisted drafting and content creation tool for accelerating documentation and creative tasks.",
+    "tr": "Belgeleme ve yaratıcı görevleri hızlandırmak için YZ destekli taslak oluşturma ve içerik oluşturma aracı."
+  },
+  "icon": "FileText"
+}

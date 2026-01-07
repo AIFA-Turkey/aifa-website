@@ -1,0 +1,12 @@
+{
+  "name": "finance",
+  "title": {
+    "en": "Finance",
+    "tr": "Finans"
+  },
+  "description": {
+    "en": "AI for fraud detection and financial forecasting.",
+    "tr": "Dolandırıcılık tespiti ve finansal tahmin için YZ."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/677322b598f10e5f6b8e551c_image-1.webp"
+}

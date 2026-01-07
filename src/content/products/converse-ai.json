@@ -1,0 +1,13 @@
+{
+  "name": "converse-ai",
+  "title": {
+    "en": "Converse AI",
+    "tr": "Converse AI"
+  },
+  "description": {
+    "en": "An enterprise-grade universal ChatGPT platform for secure and customized conversational AI.",
+    "tr": "Güvenli ve özelleştirilmiş konuşma tabanlı YZ için kurumsal sınıf evrensel ChatGPT platformu."
+  },
+  "icon": "MessageSquare",
+  "image": "https://cdn.prod.website-files.com/659ab33ddfa99d9cee1363da/68975721452b28e4e29a112f_Agentic%20AI%20Cover.webp"
+}

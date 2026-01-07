@@ -1,0 +1,13 @@
+{
+  "name": "digital-transformation",
+  "title": {
+    "en": "Digital Transformation",
+    "tr": "Dijital Dönüşüm"
+  },
+  "description": {
+    "en": "Using technology to upgrade or create new business procedures.",
+    "tr": "Yeni iş prosedürleri oluşturmak veya güncellemek için teknolojiyi kullanma."
+  },
+  "icon": "Bot",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a9177cff0649e8d605addc_digital%20transformation.svg"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sap-ai-automation",
+  "title": {
+    "en": "SAP AI SDLC Automation",
+    "tr": "SAP YZ SDLC Otomasyonu"
+  },
+  "description": {
+    "en": "Combines process methodology and industry best practices with flexible SAP solutions.",
+    "tr": "Süreç metodolojisini ve endüstri en iyi uygulamalarını esnek SAP çözümleriyle birleştirir."
+  },
+  "icon": "Database",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a9173c18e8cbe0276c0fd8_intelligent%20automation.svg"
+}

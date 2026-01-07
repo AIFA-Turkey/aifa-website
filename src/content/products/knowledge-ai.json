@@ -1,0 +1,12 @@
+{
+  "name": "knowledge-ai",
+  "title": {
+    "en": "Knowledge AI",
+    "tr": "Knowledge AI"
+  },
+  "description": {
+    "en": "AI solutions for managing, searching, and extracting insights from massive corporate knowledge bases.",
+    "tr": "Devasa kurumsal bilgi tabanlarını yönetmek, aramak ve içgörü çıkarmak için YZ çözümleri."
+  },
+  "icon": "BookOpen"
+}

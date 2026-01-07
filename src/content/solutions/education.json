@@ -1,0 +1,12 @@
+{
+  "name": "education",
+  "title": {
+    "en": "Education",
+    "tr": "Eğitim"
+  },
+  "description": {
+    "en": "Personalized learning paths and administrative automation.",
+    "tr": "Kişiselleştirilmiş öğrenme yolları ve idari otomasyon."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/6773241517259701cba77eb1_image.webp"
+}

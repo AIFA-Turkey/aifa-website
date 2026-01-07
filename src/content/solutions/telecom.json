@@ -1,0 +1,12 @@
+{
+  "name": "telecom",
+  "title": {
+    "en": "Telecommunications",
+    "tr": "Telekomünikasyon"
+  },
+  "description": {
+    "en": "Network optimization and customer support automation.",
+    "tr": "Ağ optimizasyonu ve müşteri desteği otomasyonu."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/677321c5c38a2dc6106d7f61_image.webp"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "vector-databases",
+  "id": "vector-databases",
+  "title": {
+    "en": "Vector Databases",
+    "tr": "Vektör Veritabanları"
+  },
+  "description": {
+    "en": "Implementing specialized databases to store and retrieve high-dimensional data for AI models.",
+    "tr": "Yapay zeka modelleri için yüksek boyutlu verileri saklamak ve erişmek amacıyla özel veritabanları uygulama."
+  },
+  "icon": "Database"
+}

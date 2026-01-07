@@ -1,0 +1,13 @@
+{
+  "name": "blockchain",
+  "title": {
+    "en": "Blockchain Integration",
+    "tr": "Blokzincir Entegrasyonu"
+  },
+  "description": {
+    "en": "Integration of existing AIFA Labs offerings (AI, Big Data, IoT) with blockchain platforms.",
+    "tr": "Mevcut AIFA Labs tekliflerinin (YZ, Büyük Veri, IoT) blokzincir platformlarıyla entegrasyonu."
+  },
+  "icon": "Cpu",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a9173c18e8cbe0276c0fd8_intelligent%20automation.svg"
+}

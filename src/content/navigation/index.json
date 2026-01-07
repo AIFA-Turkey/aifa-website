@@ -1,0 +1,94 @@
+{
+  "mainMenu": [
+    {
+      "label": {
+        "en": "Home",
+        "tr": "Ana Sayfa"
+      },
+      "href": "/"
+    },
+    {
+      "label": {
+        "en": "Products",
+        "tr": "Ürünler"
+      },
+      "href": "/products"
+    },
+    {
+      "label": {
+        "en": "Services",
+        "tr": "Hizmetler"
+      },
+      "href": "/services"
+    },
+    {
+      "label": {
+        "en": "Solutions",
+        "tr": "Çözümler"
+      },
+      "href": "/solutions"
+    },
+    {
+      "label": {
+        "en": "Blog",
+        "tr": "Blog"
+      },
+      "href": "/blog"
+    },
+    {
+      "label": {
+        "en": "Contact",
+        "tr": "İletişim"
+      },
+      "href": "/contact"
+    }
+  ],
+  "footerProducts": [
+    {
+      "label": "Cerebro Core",
+      "href": "/products#cerebro-core"
+    },
+    {
+      "label": "SAP AI SDLC Assist (SASA)",
+      "href": "/products#sasa"
+    },
+    {
+      "label": "Converse AI",
+      "href": "/products#converse-ai"
+    },
+    {
+      "label": "Flow AI",
+      "href": "/products#flow-ai"
+    }
+  ],
+  "footerServices": [
+    {
+      "label": "Intelligent Automation",
+      "href": "/services#intelligent-automation"
+    },
+    {
+      "label": "SAP AI SDLC Automation",
+      "href": "/services#sap-ai-automation"
+    },
+    {
+      "label": "Digital Transformation",
+      "href": "/services#digital-transformation"
+    },
+    {
+      "label": "IoT (Internet of Things)",
+      "href": "/services#iot"
+    },
+    {
+      "label": "Cloud & DevOps",
+      "href": "/services#cloud"
+    },
+    {
+      "label": "EDGE AI Computer Vision",
+      "href": "/services#edge-ai"
+    },
+    {
+      "label": "Blockchain Integration",
+      "href": "/services#blockchain"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "intelligent-automation",
+  "title": {
+    "en": "Intelligent Automation",
+    "tr": "Akıllı Otomasyon"
+  },
+  "description": {
+    "en": "Simplifies business processes, optimizes resources, and improves operational efficiencies.",
+    "tr": "İş süreçlerini basitleştirir, kaynakları optimize eder ve operasyonel verimliliği artırır."
+  },
+  "icon": "Cpu",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a9173c18e8cbe0276c0fd8_intelligent%20automation.svg"
+}

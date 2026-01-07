@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": {
+            "en": "The Future of AI in Turkey",
+            "tr": "Türkiye'de Yapay Zekanın Geleceği"
+        },
+        "content": {
+            "en": "How local enterprises can leverage LLMs for growth...",
+            "tr": "Yerel işletmelerin büyüme için BDM'lerden nasıl yararlanabileceği..."
+        },
+        "date": "2023-10-27"
+    },
+    {
+        "id": "2",
+        "title": {
+            "en": "RAG vs Fine-tuning",
+            "tr": "RAG vs İnce Ayar"
+        },
+        "content": {
+            "en": "Understanding the trade-offs between RAG and Fine-tuning...",
+            "tr": "RAG ve İnce Ayar arasındaki ödünleşimleri anlamak..."
+        },
+        "date": "2023-11-15"
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "cloud-devops",
+  "id": "cloud-devops",
+  "title": {
+    "en": "Cloud & DevOps",
+    "tr": "Bulut ve DevOps"
+  },
+  "description": {
+    "en": "Assisting businesses in achieving digital transformation goals through robust cloud computing and DevOps practices.",
+    "tr": "Güçlü bulut bilişim ve DevOps uygulamaları ile işletmelerin dijital dönüşüm hedeflerine ulaşmasına yardımcı olma."
+  },
+  "icon": "Database",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a917b7cfbf6a2fb74caef8_cloud.svg"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "prompt-marketplace",
+  "title": {
+    "en": "Prompt Marketplace",
+    "tr": "Prompt Pazaryeri"
+  },
+  "description": {
+    "en": "A centralized platform for discovering, sharing, and optimizing high-performing AI prompts.",
+    "tr": "Yüksek performanslı YZ komutlarını keşfetmek, paylaşmak ve optimize etmek için merkezi bir platform."
+  },
+  "icon": "ShoppingBag"
+}

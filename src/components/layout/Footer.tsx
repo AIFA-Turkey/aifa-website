@@ -1,0 +1,86 @@
+import { Link } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
+import { getNavigation } from '@/lib/content';
+
+export default async function Footer({ locale }: { locale: string }) {
+    const t = await getTranslations({ locale }); // Use root for Footer.x keys
+    const navigation = await getNavigation();
+    const currentYear = new Date().getFullYear();
+
+    // One-Pager Links for Footer
+    const footerLinks = [
+        { label: 'Services', href: '/#services' },
+        { label: 'Solutions', href: '/#solutions' },
+        { label: 'Products', href: '/#products' },
+    ];
+
+    return (
+        <footer className="bg-[#070a13] border-t border-white/10 py-20 relative overflow-hidden">
+            {/* Footer Glow */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-blue-900/10 blur-[100px] rounded-full -z-10" />
+
+            <div className="container mx-auto px-6">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div className="col-span-1 md:col-span-2">
+                        <Link href="/" className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-6 block">
+                            {t('Footer.companyName')}
+                        </Link>
+                        <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+                            {t('Footer.description') || 'Empowering enterprises with advanced AI solutions.'}
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 className="text-white font-semibold mb-6 text-lg">{locale === 'tr' ? 'Hızlı Erişim' : 'Quick Links'}</h4>
+                        <ul className="space-y-4">
+                            {footerLinks.map((item) => (
+                                <li key={item.href}>
+                                    <Link href={item.href} className="text-gray-400 hover:text-blue-400 transition-colors">
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-white font-semibold mb-6 text-lg">{t('Navigation.contact')}</h4>
+                        <ul className="space-y-4 text-gray-400">
+                            <li className="flex items-start gap-3">
+                                <span className="text-blue-500 mt-1">📍</span>
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=Mustafa+Kemal+Mahallesi+Dumlupınar+Bulvarı+No:280+G+Bilişim+ve+Telekom+Kuluçka+ve+İdari+Binası+(Bilim)+Binası+315+Numaralı+Ofis+Çankaya/Ankara"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-blue-400 transition-colors text-left"
+                                >
+                                    {t('Footer.address')}
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">✉️</span>
+                                <a href="mailto:info@aifaturkey.com.tr" className="hover:text-blue-400 transition-colors">
+                                    info@aifaturkey.com.tr
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {/* Bottom Bar */}
+                <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                    <p>&copy; {new Date().getFullYear()} {t('Footer.companyName')}. {t('Footer.allRightsReserved')}</p>
+                    <div className="flex gap-6">
+                        <Link href="/legal/privacy-policy" className="hover:text-blue-400 transition-colors">
+                            {t('Footer.privacyPolicy')}
+                        </Link>
+                        <Link href="/legal/terms-of-service" className="hover:text-blue-400 transition-colors">
+                            {t('Footer.termsOfService')}
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            {/* Footer Glow */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-32 bg-blue-900/10 blur-[100px] -z-10" />
+        </footer>
+    );
+}

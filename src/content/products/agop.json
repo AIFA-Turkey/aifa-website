@@ -1,0 +1,12 @@
+{
+  "name": "agop",
+  "title": {
+    "en": "AGOP",
+    "tr": "AGOP"
+  },
+  "description": {
+    "en": "AI Governance and Observability Platform for ensuring compliance, safety, and performance.",
+    "tr": "Uyumluluk, güvenlik ve performansı sağlamak için YZ Yönetişim ve Gözlemlenebilirlik Platformu."
+  },
+  "icon": "ShieldAlert"
+}

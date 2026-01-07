@@ -1,0 +1,39 @@
+{
+    "Navigation": {
+        "home": "Ana Sayfa",
+        "services": "Hizmetlerimiz",
+        "solutions": "Çözümler",
+        "products": "Ürünler",
+        "contact": "İletişim",
+        "industries": "Endüstriler",
+        "blog": "Blog",
+        "getStarted": "Başlayın"
+    },
+    "Common": {
+        "loading": "Yükleniyor...",
+        "readMore": "Devamını Oku"
+    },
+    "About": {
+        "title": "Hakkımızda",
+        "description": "Startuplara ve işletmelere son teknoloji çözümler sunan bir dijital dönüşüm firmasıyız. İşletmelerin risk azaltmalarına, uyumluluğu artırmalarına, sadık müşterileri korumalarına, maliyetleri kontrol etmelerine ve en iyi personeli çekmelerine yardımcı oluyoruz.",
+        "list1": "Dijital Dönüşüm",
+        "list2": "Üretken YZ Çözümleri",
+        "list3": "Edge YZ Entegrasyonu"
+    },
+    "Home": {
+        "heroTitle": "İşletme Dönüşümünü Güçlendirin",
+        "heroSubtitle": "her katmanda Yapay Zeka ile",
+        "heroDesc": "Sınırsız olasılıkların kilidini açmak için Üretken YZ ve Edge YZ'nin birleşik gücünü getiriyoruz.",
+        "servicesTitle": "Hizmetlerimiz",
+        "servicesDesc": "Modern İşletmeler için Kapsamlı Çözümler"
+    },
+    "Footer": {
+        "companyName": "AIFA TURKEY",
+        "allRightsReserved": "Tüm hakları saklıdır.",
+        "menu": "Menü",
+        "description": "Gelecek İçin Gelişmiş Yapay Zeka Çözümleri.",
+        "address": "Mustafa Kemal Mahallesi Dumlupınar Bulvarı No:280 G Bilişim ve Telekom Kuluçka ve İdari Binası (Bilim) Binası 315 Numaralı Ofis Çankaya/Ankara",
+        "privacyPolicy": "Gizlilik Politikası",
+        "termsOfService": "Hizmet Şartları"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "edge-ai",
+  "title": {
+    "en": "EDGE AI Computer Vision",
+    "tr": "EDGE YZ Bilgisayarlı Görü"
+  },
+  "description": {
+    "en": "An interdisciplinary field dealing with how computers can acquire high-level understanding from digital images or videos.",
+    "tr": "Bilgisayarların dijital görüntülerden veya videolardan üst düzey anlayış kazanmasıyla ilgilenen disiplinlerarası bir alan."
+  },
+  "icon": "Bot",
+  "image": "https://cdn.prod.website-files.com/659ab33ddfa99d9cee1363da/661fa42b699430ae6c0b6322_edge.webp"
+}

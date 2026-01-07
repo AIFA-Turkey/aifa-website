@@ -1,0 +1,98 @@
+[
+    {
+        "id": "intelligent-automation",
+        "title": {
+            "en": "Intelligent Automation",
+            "tr": "Akıllı Otomasyon"
+        },
+        "description": {
+            "en": "Streamlining business workflows and reducing human error through advanced AI-driven automation.",
+            "tr": "Gelişmiş yapay zeka destekli otomasyon ile iş süreçlerini modernize etme ve insan hatasını azaltma."
+        },
+        "icon": "Cpu"
+    },
+    {
+        "id": "sap-ai-automation",
+        "title": {
+            "en": "SAP AI SDLC Automation",
+            "tr": "SAP YZ SDLC Otomasyonu"
+        },
+        "description": {
+            "en": "Fully automated SAP software development lifecycles and migrations to accelerate delivery.",
+            "tr": "Teslimatı hızlandırmak için tam otomatik SAP yazılım geliştirme döngüleri ve geçişleri."
+        },
+        "icon": "Database"
+    },
+    {
+        "id": "digital-transformation",
+        "title": {
+            "en": "Digital Transformation",
+            "tr": "Dijital Dönüşüm"
+        },
+        "description": {
+            "en": "Upgrading or creating new business procedures using cutting-edge technology to meet modern demands.",
+            "tr": "Modern talepleri karşılamak için en son teknolojiyi kullanarak iş prosedürlerini iyileştirme veya yeniden oluşturma."
+        },
+        "icon": "Bot"
+    },
+    {
+        "id": "iot",
+        "title": {
+            "en": "IoT (Internet of Things)",
+            "tr": "Nesnelerin İnterneti (IoT)"
+        },
+        "description": {
+            "en": "Enabling seamless device-to-device communication and data exchange without human interaction.",
+            "tr": "İnsan müdahalesi olmadan kesintisiz cihazdan cihaza iletişim ve veri alışverişi sağlama."
+        },
+        "icon": "Cpu"
+    },
+    {
+        "id": "cloud-devops",
+        "title": {
+            "en": "Cloud & DevOps",
+            "tr": "Bulut ve DevOps"
+        },
+        "description": {
+            "en": "Assisting businesses in achieving digital transformation goals through robust cloud computing and DevOps practices.",
+            "tr": "Güçlü bulut bilişim ve DevOps uygulamaları ile işletmelerin dijital dönüşüm hedeflerine ulaşmasına yardımcı olma."
+        },
+        "icon": "Database"
+    },
+    {
+        "id": "edge-ai",
+        "title": {
+            "en": "EDGE AI Computer Vision",
+            "tr": "EDGE YZ Bilgisayarlı Görü"
+        },
+        "description": {
+            "en": "Providing computers with high-level understanding from digital images or videos for real-time analysis.",
+            "tr": "Gerçek zamanlı analiz için bilgisayarlara dijital görüntü veya videolardan üst düzey anlama yeteneği kazandırma."
+        },
+        "icon": "Bot"
+    },
+    {
+        "id": "blockchain",
+        "title": {
+            "en": "Blockchain Integration",
+            "tr": "Blokzincir Entegrasyonu"
+        },
+        "description": {
+            "en": "Combining AI, Big Data, and IoT with blockchain for secure and decentralized platform solutions.",
+            "tr": "Güvenli ve merkeziyetsiz platform çözümleri için Yapay Zeka, Büyük Veri ve IoT'yi blokzincir ile birleştirme."
+        },
+        "icon": "Cpu"
+    },
+    {
+        "id": "vector-databases",
+        "title": {
+            "en": "Vector Databases",
+            "tr": "Vektör Veritabanları"
+        },
+        "description": {
+            "en": "Implementing specialized databases to store and retrieve high-dimensional data for AI models.",
+            "tr": "Yapay zeka modelleri için yüksek boyutlu verileri saklamak ve erişmek amacıyla özel veritabanları uygulama."
+        },
+        "icon": "Database"
+    }
+]

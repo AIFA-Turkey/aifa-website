@@ -1,0 +1,39 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "solutions": "Solutions",
+    "products": "Products",
+    "contact": "Contact",
+    "industries": "Industries",
+    "blog": "Blog",
+    "getStarted": "Get Started"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "readMore": "Read More"
+  },
+  "About": {
+    "title": "About Us",
+    "description": "We are a digital transformation firm that provides cutting-edge solutions to startups and enterprises. We assist businesses in reducing risk, increasing compliance, retaining loyal consumers, controlling expenses, and attracting top personnel.",
+    "list1": "Digital Transformation",
+    "list2": "Gen AI Solutions",
+    "list3": "Edge AI Integration"
+  },
+  "Home": {
+    "heroTitle": "Empowering Enterprise Transformation",
+    "heroSubtitle": "with AI at Every Layer",
+    "heroDesc": "Bringing the combined power of Generative AI & Edge AI to unlock unlimited possibilities.",
+    "servicesTitle": "Our Services",
+    "servicesDesc": "Comprehensive Solutions for Modern Enterprises"
+  },
+  "Footer": {
+    "companyName": "AIFA TURKEY",
+    "allRightsReserved": "All rights reserved.",
+    "menu": "Menu",
+    "description": "Advanced AI Solutions for the Future.",
+    "address": "Mustafa Kemal Mahallesi Dumlupınar Bulvarı No:280 G Bilişim ve Telekom Kuluçka ve İdari Binası (Bilim) Binası 315 Numaralı Ofis Çankaya/Ankara",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}

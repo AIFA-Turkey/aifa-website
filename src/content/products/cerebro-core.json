@@ -1,0 +1,13 @@
+{
+  "name": "cerebro-core",
+  "title": {
+    "en": "Cerebro Core",
+    "tr": "Cerebro Core"
+  },
+  "description": {
+    "en": "A multimodal Generative AI platform for the responsible creation, management, and deployment of AI applications.",
+    "tr": "YZ uygulamalarının sorumlu bir şekilde oluşturulması, yönetilmesi ve dağıtılması için çok modlu bir Üretken YZ platformu."
+  },
+  "icon": "Brain",
+  "image": "https://cdn.prod.website-files.com/659ab33ddfa99d9cee1363da/6617cb075a1d16de1d085fc1_core.webp"
+}

@@ -1,0 +1,236 @@
+{
+    "content": {
+        "en": [
+            {
+                "type": "heading",
+                "level": 1,
+                "children": [
+                    {
+                        "text": "Privacy Policy"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Last Updated: January 2026"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "1. Introduction"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Welcome to AIFA TURKEY. We value your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and share your information when you visit our website or use our services."
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "2. Information We Collect"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "We may collect the following types of information:"
+                    }
+                ]
+            },
+            {
+                "type": "unordered-list",
+                "children": [
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Personal Identification Information (Name, email address, phone number, etc.)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Technical Data (IP address, browser type, cookies, etc.)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Usage Data (Pages visited, time spent, etc.)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "3. How We Use Your Information"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "We use your data to provide customer support, improve our services, and communicate with you about updates or marketing offers, subject to your consent."
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "4. Contact Us"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "If you have any questions about this privacy policy, please contact us at info@aifaturkey.com.tr."
+                    }
+                ]
+            }
+        ],
+        "tr": [
+            {
+                "type": "heading",
+                "level": 1,
+                "children": [
+                    {
+                        "text": "Gizlilik Politikası"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Son Güncelleme: Yanvar 2026"
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "1. Giriş"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "AIFA TURKEY'e hoş geldiniz. Gizliliğinize değer veriyoruz ve kişisel verilerinizi korumayı taahhüt ediyoruz. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve paylaştığımızı açıklar."
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "2. Topladığımız Bilgiler"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Aşağıdaki bilgi türlerini toplayabiliriz:"
+                    }
+                ]
+            },
+            {
+                "type": "unordered-list",
+                "children": [
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Kişisel Kimlik Bilgileri (İsim, e-posta adresi, telefon numarası vb.)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Teknik Veriler (IP adresi, tarayıcı türü, çerezler vb.)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "list-item",
+                        "children": [
+                            {
+                                "text": "Kullanım Verileri (Ziyaret edilen sayfalar, harcanan süre vb.)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "3. Bilgilerinizi Nasıl Kullanıyoruz"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Verilerinizi müşteri desteği sağlamak, hizmetlerimizi geliştirmek ve rızanıza bağlı olarak güncellemeler veya pazarlama teklifleri hakkında sizinle iletişim kurmak için kullanıyoruz."
+                    }
+                ]
+            },
+            {
+                "type": "heading",
+                "level": 2,
+                "children": [
+                    {
+                        "text": "4. İletişim"
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Bu gizlilik politikası hakkında herhangi bir sorunuz varsa, lütfen info@aifaturkey.com.tr adresinden bizimle iletişime geçin."
+                    }
+                ]
+            }
+        ]
+    }
+}

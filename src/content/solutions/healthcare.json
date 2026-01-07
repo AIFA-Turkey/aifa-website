@@ -1,0 +1,12 @@
+{
+  "name": "healthcare",
+  "title": {
+    "en": "Healthcare",
+    "tr": "Sağlık"
+  },
+  "description": {
+    "en": "Improving patient care with predictive AI.",
+    "tr": "Öngörücü YZ ile hasta bakımını iyileştirme."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/677323638f121eb024752c73_image.webp"
+}

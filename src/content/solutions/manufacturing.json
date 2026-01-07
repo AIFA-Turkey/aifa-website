@@ -1,0 +1,12 @@
+{
+  "name": "manufacturing",
+  "title": {
+    "en": "Manufacturing",
+    "tr": "Üretim"
+  },
+  "description": {
+    "en": "Predictive maintenance and quality control.",
+    "tr": "Kestirimci bakım ve kalite kontrol."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/677324f08ae08dc2cb2dc01d_image.webp"
+}

@@ -1,0 +1,122 @@
+[
+    {
+        "id": "retail",
+        "title": {
+            "en": "Retail",
+            "tr": "Perakende"
+        },
+        "description": {
+            "en": "Enhancing customer engagement through personalized recommendations and deep feedback analysis.",
+            "tr": "Kişiselleştirilmiş öneriler ve derin geri bildirim analizi ile müşteri etkileşimini artırma."
+        },
+        "icon": "ShoppingBag"
+    },
+    {
+        "id": "telecommunications",
+        "title": {
+            "en": "Telecommunications",
+            "tr": "Telekomünikasyon"
+        },
+        "description": {
+            "en": "Optimizing network performance and customer support through predictive analytics and automation.",
+            "tr": "Tahmine dayalı analitik ve otomasyon ile ağ performansını ve müşteri desteğini optimize etme."
+        },
+        "icon": "Cpu"
+    },
+    {
+        "id": "finance",
+        "title": {
+            "en": "Finance",
+            "tr": "Finans"
+        },
+        "description": {
+            "en": "Automating financial reporting and identifying at-risk customers with proactive churn prediction.",
+            "tr": "Finansal raporlamayı otomatikleştirme ve proaktif kayıp tahmini ile riskli müşterileri belirleme."
+        },
+        "icon": "Banknote"
+    },
+    {
+        "id": "healthcare",
+        "title": {
+            "en": "Healthcare",
+            "tr": "Sağlık"
+        },
+        "description": {
+            "en": "Improving patient outcomes with virtual health assistants and quick summarization of medical records.",
+            "tr": "Sanal sağlık asistanları ve tıbbi kayıtların hızlı özetlenmesi ile hasta sonuçlarını iyileştirme."
+        },
+        "icon": "HeartPulse"
+    },
+    {
+        "id": "education",
+        "title": {
+            "en": "Education",
+            "tr": "Eğitim"
+        },
+        "description": {
+            "en": "Personalizing learning experiences and automating administrative tasks for improved educational efficiency.",
+            "tr": "Eğitim verimliliğini artırmak için öğrenme deneyimlerini kişiselleştirme ve idari görevleri otomatikleştirme."
+        },
+        "icon": "Bot"
+    },
+    {
+        "id": "manufacturing",
+        "title": {
+            "en": "Manufacturing",
+            "tr": "Üretim"
+        },
+        "description": {
+            "en": "Increasing operational uptime through predictive maintenance and supply chain optimization.",
+            "tr": "Kestirimci bakım ve tedarik zinciri optimizasyonu ile operasyonel çalışma süresini artırma."
+        },
+        "icon": "Cpu"
+    },
+    {
+        "id": "media",
+        "title": {
+            "en": "Media & Entertainment",
+            "tr": "Medya ve Eğlence"
+        },
+        "description": {
+            "en": "Driving audience growth with content personalization and advanced sentiment analysis.",
+            "tr": "İçerik kişiselleştirme ve gelişmiş duygu analizi ile izleyici kitlesini büyütme."
+        },
+        "icon": "ShoppingBag"
+    },
+    {
+        "id": "real-estate",
+        "title": {
+            "en": "Real Estate",
+            "tr": "Gayrimenkul"
+        },
+        "description": {
+            "en": "Streamlining property management and market analysis through automated data processing.",
+            "tr": "Otomatik veri işleme ile mülk yönetimi ve pazar analizini kolaylaştırma."
+        },
+        "icon": "Banknote"
+    },
+    {
+        "id": "legal",
+        "title": {
+            "en": "Legal",
+            "tr": "Hukuk"
+        },
+        "description": {
+            "en": "Accelerating document review and legal research with AI-powered textual analysis.",
+            "tr": "Yapay zeka destekli metin analizi ile belge inceleme ve hukuki araştırmayı hızlandırma."
+        },
+        "icon": "Database"
+    },
+    {
+        "id": "public-services",
+        "title": {
+            "en": "Public Services",
+            "tr": "Kamu Hizmetleri"
+        },
+        "description": {
+            "en": "Enhancing civic engagement and public data management for more efficient governance.",
+            "tr": "Daha verimli bir yönetim için sivil katılımı ve kamu veri yönetimini geliştirme."
+        },
+        "icon": "HeartPulse"
+    }
+]

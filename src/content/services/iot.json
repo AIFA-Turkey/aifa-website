@@ -1,0 +1,13 @@
+{
+  "name": "iot",
+  "title": {
+    "en": "IoT (Internet of Things)",
+    "tr": "Nesnelerin İnterneti"
+  },
+  "description": {
+    "en": "Enabling devices to talk to each other without needing human interaction.",
+    "tr": "Cihazların insan etkileşimi olmadan birbirleriyle konuşmasını sağlama."
+  },
+  "icon": "Cpu",
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/65a9179cf9f858bde53d5678_iot.svg"
+}

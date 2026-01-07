@@ -1,0 +1,3 @@
+# CMS
+src/content/**
+!src/content/.gitkeep

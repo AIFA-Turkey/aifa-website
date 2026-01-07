@@ -1,0 +1,12 @@
+{
+  "name": "retail",
+  "title": {
+    "en": "Retail",
+    "tr": "Perakende"
+  },
+  "description": {
+    "en": "AI solutions for retail analytics and customer experience.",
+    "tr": "Perakende analitiği ve müşteri deneyimi için YZ çözümleri."
+  },
+  "image": "https://cdn.prod.website-files.com/65a65d597624a0885ef7e135/67697c2cf2abd948e4dff29a_image-1.webp"
+}

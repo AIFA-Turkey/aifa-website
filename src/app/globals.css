@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0b1021;
+  --color-foreground: #c2d2e8;
+  --color-primary-blue: #4093FF;
+  --color-primary-purple: #9F73FA;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0b1021;
+  /* Deep Navy */
+  --foreground: #c2d2e8;
+  /* Light Blue-Grey */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(64, 147, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 0% 50%, rgba(159, 115, 250, 0.10) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(64, 147, 255, 0.08) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Force Langflow Chat Host sizing */
+langflow-chat {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
 }
