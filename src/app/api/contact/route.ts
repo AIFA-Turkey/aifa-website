@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { sendMail } from '@/lib/mail';
+import { sendMail, getMailConfig } from '@/lib/mail';
 
 export async function POST(request: Request) {
     try {
@@ -14,8 +14,18 @@ export async function POST(request: Request) {
             );
         }
 
+        // Get config to find receiver
+        const config: any = await getMailConfig();
+        const targetEmail = config?.contact_receiver || process.env.CONTACT_EMAIL || 'info@aifaturkey.com.tr';
+        console.log('[[DEBUG FORCE UPDATE]] Attempting to send contact email:', {
+            name,
+            email,
+            targetEmail,
+            messageLength: message?.length
+        });
+
         await sendMail({
-            to: process.env.CONTACT_EMAIL || 'info@aifaturkey.com.tr',
+            to: targetEmail,
             subject: `New Contact Form Submission from ${name}`,
             html: `
                 <h3>New Contact Request</h3>
@@ -26,9 +36,10 @@ export async function POST(request: Request) {
             `,
         });
 
+        console.log('Contact email sent successfully');
         return NextResponse.json({ success: true });
     } catch (error: any) {
-        console.error('Email Error:', error);
+        console.error('Contact Email Error Details:', error);
         return NextResponse.json(
             { error: error.message || 'Failed to send email' },
             { status: 500 }

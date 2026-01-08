@@ -135,6 +135,18 @@ export default function MailSettingsForm({ initialData }: { initialData: any }) 
                             className="w-full p-3 bg-[#070a13] border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-200"
                         />
                     </div>
+
+                    <div className="md:col-span-2 border-t border-white/5 pt-6 mt-2">
+                        <label className="block text-sm font-medium text-blue-400 mb-2">Contact Form Receiver</label>
+                        <p className="text-xs text-gray-500 mb-3">Where should emails from the "Get in Touch" form be sent?</p>
+                        <input
+                            type="email"
+                            placeholder="your-email@example.com"
+                            value={data.contact_receiver || ''}
+                            onChange={(e) => handleChange('contact_receiver', e.target.value)}
+                            className="w-full p-3 bg-[#070a13] border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-gray-200"
+                        />
+                    </div>
                 </div>
 
                 <div className="flex justify-end gap-3 mt-8">
