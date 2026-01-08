@@ -47,7 +47,7 @@ export default function ContactForm() {
                         {locale === 'tr' ? 'İletişime Geçin' : 'Get in Touch'}
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
                                 {locale === 'tr' ? 'Adınız Soyadınız' : 'Full Name'}
