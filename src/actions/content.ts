@@ -1,53 +1,144 @@
 'use server';
 
-import fs from 'fs/promises';
-import path from 'path';
 import { revalidatePath } from 'next/cache';
-
-const CONTENT_DIR = path.join(process.cwd(), 'src/content');
+import { db } from '@/db';
+import * as schema from '@/db/schema';
+import { eq } from 'drizzle-orm';
 
 export async function getContentTypes() {
     return ['services', 'products', 'solutions'];
 }
 
+function getTable(type: string) {
+    switch (type) {
+        case 'services': return schema.services;
+        case 'products': return schema.products;
+        case 'solutions': return schema.solutions;
+        case 'legal': return schema.legal;
+        default: return null;
+    }
+}
+
 export async function getItems(type: string) {
-    const dir = path.join(CONTENT_DIR, type);
+    const table = getTable(type);
+    if (!table) return [];
+
     try {
-        const files = await fs.readdir(dir);
-        const items = await Promise.all(
-            files.filter(f => f.endsWith('.json')).map(async file => {
-                const content = await fs.readFile(path.join(dir, file), 'utf-8');
-                return { slug: file.replace('.json', ''), ...JSON.parse(content) };
-            })
-        );
-        return items;
+        const results = await db.select().from(table);
+        return results.map(row => ({
+            slug: row.slug,
+            ...(row.data as any)
+        }));
     } catch (e) {
+        console.error(`Failed to get items for ${type}`, e);
         return [];
     }
 }
 
 export async function getItem(type: string, slug: string) {
-    const filepath = path.join(CONTENT_DIR, type, `${slug}.json`);
+    const table = getTable(type);
+    if (!table) return null;
+
     try {
-        const content = await fs.readFile(filepath, 'utf-8');
-        return JSON.parse(content);
+        const result = await db.select().from(table).where(eq(table.slug, slug)).limit(1);
+        if (!result.length) return null;
+        return {
+            slug: result[0].slug,
+            ...(result[0].data as any)
+        };
     } catch (e) {
+        console.error(`Failed to get item ${type}/${slug}`, e);
         return null;
     }
 }
 
 export async function updateItem(type: string, slug: string, data: any) {
-    const filepath = path.join(CONTENT_DIR, type, `${slug}.json`);
-    await fs.writeFile(filepath, JSON.stringify(data, null, 2));
-    revalidatePath(`/admin/${type}/${slug}`);
-    revalidatePath('/[locale]', 'layout');
-    return { success: true };
+    const table = getTable(type);
+    if (!table) return { success: false, error: 'Invalid type' };
+
+    try {
+        await db.insert(table).values({
+            slug,
+            data
+        }).onConflictDoUpdate({
+            target: table.slug,
+            set: { data }
+        });
+
+        revalidatePath(`/admin/${type}/${slug}`);
+        revalidatePath('/[locale]', 'layout');
+        return { success: true };
+    } catch (e) {
+        console.error(`Failed to update item ${type}/${slug}`, e);
+        return { success: false, error: 'Update failed' };
+    }
 }
 
 export async function saveChatbotConfig(data: any) {
-    const filepath = path.join(CONTENT_DIR, 'chatbot.json');
-    await fs.writeFile(filepath, JSON.stringify(data, null, 2));
-    revalidatePath('/admin/chatbot');
-    revalidatePath('/[locale]', 'layout');
-    return { success: true };
+    try {
+        // Chatbot is a singleton with auto-inc ID, but we likely just want one row.
+        // Schema: id (dashed), data.
+        // Let's assume ID 1 or just check if any exists. 
+        // Best implementation for singleton in this schema: delete all and insert one, or update ID 1.
+
+        // Let's check if it exists
+        const existing = await db.select().from(schema.chatbot).limit(1);
+        if (existing.length) {
+            await db.update(schema.chatbot).set({ data }).where(eq(schema.chatbot.id, existing[0].id));
+        } else {
+            await db.insert(schema.chatbot).values({ data });
+        }
+
+        revalidatePath('/admin/chatbot');
+        revalidatePath('/[locale]', 'layout');
+        return { success: true };
+    } catch (e) {
+        console.error('Failed to save chatbot config', e);
+        return { success: false, error: 'Save failed' };
+    }
+}
+export async function updateHero(data: any) {
+    try {
+        const TABLE = schema.hero;
+        // Upsert logic for singleton
+        const existing = await db.select().from(TABLE).limit(1);
+
+        if (existing.length > 0) {
+            await db.update(TABLE)
+                .set({ data })
+                .where(eq(TABLE.id, existing[0].id));
+        } else {
+            await db.insert(TABLE).values({ data });
+        }
+
+        revalidatePath('/[locale]');
+        revalidatePath('/');
+        return { success: true };
+    } catch (e) {
+        console.error(`Failed to update hero`, e);
+        throw new Error('Failed to update hero');
+    }
+}
+
+export async function updateFooter(data: any) {
+    try {
+        const TABLE = schema.footer;
+        // Upsert logic for singleton
+        const existing = await db.select().from(TABLE).limit(1);
+
+        if (existing.length > 0) {
+            await db.update(TABLE)
+                .set({ data })
+                .where(eq(TABLE.id, existing[0].id));
+        } else {
+            await db.insert(TABLE).values({ data });
+        }
+
+        revalidatePath('/[locale]');
+        revalidatePath('/');
+        return { success: true };
+    } catch (e) {
+        console.error(`Failed to update footer`, e);
+        throw new Error('Failed to update footer');
+    }
 }

@@ -22,29 +22,46 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                             </Link>
                         </div>
                         <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-                            <Link href="/admin/services" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
-                                Services
-                            </Link>
-                            <Link href="/admin/solutions" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
-                                Solutions
-                            </Link>
-                            <Link href="/admin/products" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
-                                Products
-                            </Link>
+                            <div className="space-y-1">
+                                <span className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Site Content</span>
+                                <Link href="/admin/hero" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Homepage Banner
+                                </Link>
+                                <Link href="/admin/services" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Services
+                                </Link>
+                                <Link href="/admin/solutions" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Solutions
+                                </Link>
+                                <Link href="/admin/products" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Products
+                                </Link>
+                                <Link href="/admin/footer" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Footer Content
+                                </Link>
+                            </div>
+
                             {/* Legal Section */}
-                            <div className="pt-4 mt-4 border-t border-white/5">
+                            <div className="pt-4 mt-4 border-t border-white/5 space-y-1">
                                 <span className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Legal</span>
-                                <Link href="/admin/legal/privacy-policy" className="block mt-2 px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                <Link href="/admin/legal/privacy-policy" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
                                     Privacy Policy
                                 </Link>
                                 <Link href="/admin/legal/terms-of-service" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
                                     Terms of Service
                                 </Link>
                             </div>
-                            <div className="pt-4 mt-4 border-t border-white/5">
-                                <span className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Settings</span>
-                                <Link href="/admin/chatbot" className="block mt-2 px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+
+                            <div className="pt-4 mt-4 border-t border-white/5 space-y-1">
+                                <span className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">System Configuration</span>
+                                <Link href="/admin/chatbot" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
                                     Chatbot Config
+                                </Link>
+                                <Link href="/admin/mail" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Mail Configuration
+                                </Link>
+                                <Link href="/admin/data" className="block px-4 py-2 rounded text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                                    Data Management
                                 </Link>
                             </div>
                             <div className="pt-4 mt-4 border-t border-white/5">

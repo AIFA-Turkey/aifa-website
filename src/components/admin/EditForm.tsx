@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { updateItem } from '@/actions/content';
 import { useRouter } from 'next/navigation';
+import IconPicker from './IconPicker';
 
 export default function EditForm({ type, slug, initialData }: { type: string, slug: string, initialData: any }) {
     const [data, setData] = useState(initialData);
@@ -95,11 +96,9 @@ export default function EditForm({ type, slug, initialData }: { type: string, sl
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-2">Icon Name (Lucide)</label>
-                            <input
-                                type="text"
-                                value={data.icon || ''}
-                                onChange={(e) => handleChange('icon', e.target.value)}
-                                className="w-full p-3 bg-[#070a13] border border-white/10 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-200 placeholder-gray-600 transition-all"
+                            <IconPicker
+                                value={data.icon || 'HelpCircle'}
+                                onChange={(val) => handleChange('icon', val)}
                             />
                         </div>
                     </div>

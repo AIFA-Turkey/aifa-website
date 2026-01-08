@@ -3,6 +3,8 @@ import EditForm from '@/components/admin/EditForm';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+import LegalEditForm from '@/components/admin/LegalEditForm';
+
 export default async function EditPage({ params }: { params: Promise<{ type: string, slug: string }> }) {
     const { type, slug } = await params;
     const item = await getItem(type, slug);
@@ -20,7 +22,11 @@ export default async function EditPage({ params }: { params: Promise<{ type: str
                 <h1 className="text-2xl font-bold">Edit {item.title?.en || slug}</h1>
             </div>
 
-            <EditForm type={type} slug={slug} initialData={item} />
+            {type === 'legal' ? (
+                <LegalEditForm type={type} slug={slug} initialData={item} />
+            ) : (
+                <EditForm type={type} slug={slug} initialData={item} />
+            )}
         </div>
     );
 }

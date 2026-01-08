@@ -12,7 +12,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
     }
 
     const t = await getTranslations({ locale });
-    const content = await getLegalContent(slug);
+    const content = await getLegalContent(slug) as any;
 
     if (!content) {
         return (
@@ -26,6 +26,8 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
     // Determine content based on locale
     const localizedContent = locale === 'tr' ? content.content.tr : content.content.en;
 
+    const isHtml = typeof localizedContent === 'string';
+
     return (
         <main className="min-h-screen pt-32 pb-20 relative">
             {/* Background Spotlights */}
@@ -37,7 +39,11 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
                 </h1>
 
                 <div className="prose prose-invert prose-lg max-w-none">
-                    <DocumentRenderer document={localizedContent} />
+                    {isHtml ? (
+                        <div dangerouslySetInnerHTML={{ __html: localizedContent }} />
+                    ) : (
+                        <DocumentRenderer document={localizedContent} />
+                    )}
                 </div>
             </div>
         </main>

@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { getProducts, getServices, getSolutions } from '@/lib/content';
+import { getProducts, getServices, getSolutions, getHeroConfig } from '@/lib/content';
 import { ArrowRight } from 'lucide-react';
 import AccordionSolutions from '@/components/features/AccordionSolutions';
 import ContactForm from '@/components/features/ContactForm';
@@ -24,10 +24,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const rawProducts = await getProducts();
   const rawServices = await getServices();
   const rawSolutions = await getSolutions();
+  const heroData: any = await getHeroConfig();
 
   const services = localizeItems(rawServices, locale);
   const products = localizeItems(rawProducts, locale);
   const solutions = localizeItems(rawSolutions, locale);
+
+  const heroSubtitle = heroData?.subtitle?.[locale] || t('Home.heroSubtitle') || 'Next Gen AI';
+  const heroTitle = heroData?.title?.[locale] || t('Home.heroTitle') || 'Empowering Enterprise Transformation';
+  const heroDesc = heroData?.description?.[locale] || t('Home.heroDesc');
+
+  const heroCtaText = heroData?.cta?.text?.[locale] || t('Navigation.solutions') || 'Explore Solutions';
+  const heroCtaLink = heroData?.cta?.link?.[locale] || '/#solutions';
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -51,29 +59,29 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           {/* Floating Badge */}
           <div className="inline-block mb-8 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-900/10 backdrop-blur-md">
             <span className="text-blue-300 text-sm font-medium tracking-wider uppercase">
-              {t('Home.heroSubtitle') || 'Next Gen AI'}
+              {heroSubtitle}
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-tight">
             <span className="bg-clip-text text-transparent bg-white">
-              {t('Home.heroTitle').split(' ')[0]}
+              {heroTitle.split(' ')[0]}
             </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-              {' ' + (t('Home.heroTitle').split(' ').slice(1).join(' '))}
+              {' ' + (heroTitle.split(' ').slice(1).join(' '))}
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-blue-100/70 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            {t('Home.heroDesc')}
+            {heroDesc}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
-              href="/#solutions"
+              href={heroCtaLink}
               className="px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white text-lg rounded-full font-bold transition-all hover:scale-105 shadow-[0_0_40px_rgba(64,147,255,0.3)] flex items-center justify-center gap-3"
             >
-              {t('Navigation.solutions') || 'Explore Solutions'}
+              {heroCtaText}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

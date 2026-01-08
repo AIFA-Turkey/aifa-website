@@ -1,14 +1,25 @@
 import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
-import { getNavigation } from '@/lib/content';
+import { getNavigation, getFooterConfig } from '@/lib/content'; // Import getFooterConfig
 
 export default async function Footer({ locale }: { locale: string }) {
-    const t = await getTranslations({ locale }); // Use root for Footer.x keys
+    const t = await getTranslations({ locale });
     const navigation = await getNavigation();
+    const footerConfig: any = await getFooterConfig(); // Fetch footer data
+
     const currentYear = new Date().getFullYear();
 
+    // Data Fallbacks
+    const companyName = footerConfig?.companyName || t('Footer.companyName') || 'Aifa';
+    const description = footerConfig?.description?.[locale] || t('Footer.description') || 'Empowering enterprises with advanced AI solutions.';
+    const address = footerConfig?.address || t('Footer.address') || 'Mustafa Kemal Mahallesi...';
+    const email = footerConfig?.email || 'info@aifaturkey.com.tr';
+
+    // Social Links (could iterate if needed, or static access)
+    // const social = footerConfig?.social || {};
+
     // One-Pager Links for Footer
-    const footerLinks = [
+    const footerLinks = footerConfig?.quickLinks || [
         { label: 'Services', href: '/#services' },
         { label: 'Solutions', href: '/#solutions' },
         { label: 'Products', href: '/#products' },
@@ -23,10 +34,10 @@ export default async function Footer({ locale }: { locale: string }) {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-6 block">
-                            {t('Footer.companyName')}
+                            {companyName}
                         </Link>
                         <p className="text-gray-400 text-lg max-w-md leading-relaxed">
-                            {t('Footer.description') || 'Empowering enterprises with advanced AI solutions.'}
+                            {description}
                         </p>
                     </div>
 
@@ -54,13 +65,13 @@ export default async function Footer({ locale }: { locale: string }) {
                                     rel="noopener noreferrer"
                                     className="hover:text-blue-400 transition-colors text-left"
                                 >
-                                    {t('Footer.address')}
+                                    {address}
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <span className="text-blue-500">✉️</span>
-                                <a href="mailto:info@aifaturkey.com.tr" className="hover:text-blue-400 transition-colors">
-                                    info@aifaturkey.com.tr
+                                <a href={`mailto:${email}`} className="hover:text-blue-400 transition-colors">
+                                    {email}
                                 </a>
                             </li>
                         </ul>
@@ -68,7 +79,7 @@ export default async function Footer({ locale }: { locale: string }) {
                 </div>
                 {/* Bottom Bar */}
                 <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} {t('Footer.companyName')}. {t('Footer.allRightsReserved')}</p>
+                    <p>&copy; {currentYear} {companyName}. {t('Footer.allRightsReserved')}</p>
                     <div className="flex gap-6">
                         <Link href="/legal/privacy-policy" className="hover:text-blue-400 transition-colors">
                             {t('Footer.privacyPolicy')}
