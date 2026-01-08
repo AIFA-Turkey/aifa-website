@@ -7,12 +7,13 @@ export default async function Chatbot() {
     const cmsConfig = await getChatbotConfig();
 
     // 2. Fallback to Environment Variables (or default)
+    const safeCmsConfig = cmsConfig as any;
     const config = {
-        enabled: cmsConfig?.enabled ?? true, // Default to true if missing in old config
-        window_title: cmsConfig?.window_title || process.env.NEXT_PUBLIC_CHATBOT_TITLE || 'Assistant',
-        flow_id: cmsConfig?.flow_id || process.env.NEXT_PUBLIC_CHATBOT_FLOW_ID || '',
-        host_url: cmsConfig?.host_url || process.env.NEXT_PUBLIC_CHATBOT_HOST || 'https://www.cerebroaifalabs.com',
-        api_key: cmsConfig?.api_key || process.env.NEXT_PUBLIC_CHATBOT_API_KEY || ''
+        enabled: safeCmsConfig?.enabled ?? true, // Default to true if missing in old config
+        window_title: safeCmsConfig?.window_title || process.env.NEXT_PUBLIC_CHATBOT_TITLE || 'Assistant',
+        flow_id: safeCmsConfig?.flow_id || process.env.NEXT_PUBLIC_CHATBOT_FLOW_ID || '',
+        host_url: safeCmsConfig?.host_url || process.env.NEXT_PUBLIC_CHATBOT_HOST || 'https://www.cerebroaifalabs.com',
+        api_key: safeCmsConfig?.api_key || process.env.NEXT_PUBLIC_CHATBOT_API_KEY || ''
     };
 
     if (!config.enabled || !config.flow_id || !config.api_key) {

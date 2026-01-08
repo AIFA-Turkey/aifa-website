@@ -36,11 +36,11 @@ export default async function AdminFooterPage() {
 
     const initialData = {
         ...defaults,
-        ...dbData, // DB overrides
+        ...(dbData as any), // DB overrides
         // Ensure nested objects are merged correctly if they exist in DB
-        description: { ...defaults.description, ...(dbData?.description || {}) },
-        social: { ...defaults.social, ...(dbData?.social || {}) },
-        quickLinks: dbData?.quickLinks || defaults.quickLinks
+        description: { ...defaults.description, ...((dbData as any)?.description || {}) },
+        social: { ...defaults.social, ...((dbData as any)?.social || {}) },
+        quickLinks: (dbData as any)?.quickLinks || defaults.quickLinks
     };
 
     return (

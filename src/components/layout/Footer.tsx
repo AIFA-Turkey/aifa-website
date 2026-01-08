@@ -44,7 +44,7 @@ export default async function Footer({ locale }: { locale: string }) {
                     <div>
                         <h4 className="text-white font-semibold mb-6 text-lg">{locale === 'tr' ? 'Hızlı Erişim' : 'Quick Links'}</h4>
                         <ul className="space-y-4">
-                            {footerLinks.map((item) => (
+                            {footerLinks.map((item: any) => (
                                 <li key={item.href}>
                                     <Link href={item.href} className="text-gray-400 hover:text-blue-400 transition-colors">
                                         {item.label}

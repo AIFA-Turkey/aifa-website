@@ -2,7 +2,20 @@ import { getChatbotConfig } from '@/lib/content';
 import ChatbotConfigForm from '@/components/admin/ChatbotConfigForm';
 
 export default async function ChatbotPage() {
-    const config = await getChatbotConfig();
+    const rawConfig = await getChatbotConfig();
+
+    const defaults = {
+        window_title: 'AI Assistant',
+        flow_id: '',
+        host_url: '',
+        api_key: '',
+        enabled: true
+    };
+
+    const config = {
+        ...defaults,
+        ...(rawConfig as any) // Cast to allow merging if type is unknown/incompatible
+    };
 
     return (
         <div>
