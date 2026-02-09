@@ -5,10 +5,11 @@ import { eq } from 'drizzle-orm';
 export async function getServices() {
     try {
         const results = await db.select().from(schema.services);
-        return results.map(row => ({
+        const items = results.map(row => ({
             ...(row.data as any),
             slug: row.slug
         }));
+        return sortContentItems(items);
     } catch (e) {
         console.error("Failed to fetch services from DB", e);
         return [];
@@ -18,10 +19,11 @@ export async function getServices() {
 export async function getProducts() {
     try {
         const results = await db.select().from(schema.products);
-        return results.map(row => ({
+        const items = results.map(row => ({
             ...(row.data as any),
             slug: row.slug
         }));
+        return sortContentItems(items);
     } catch (e) {
         console.error("Failed to fetch products from DB", e);
         return [];
@@ -31,10 +33,11 @@ export async function getProducts() {
 export async function getSolutions() {
     try {
         const results = await db.select().from(schema.solutions);
-        return results.map(row => ({
+        const items = results.map(row => ({
             ...(row.data as any),
             slug: row.slug
         }));
+        return sortContentItems(items);
     } catch (e) {
         console.error("Failed to fetch solutions from DB", e);
         return [];
@@ -90,4 +93,22 @@ export async function getFooterConfig() {
         console.error("Failed to fetch footer config from DB", e);
         return null;
     }
+}
+
+function sortContentItems<T extends { order?: number | string; title?: { en?: string; tr?: string }; slug?: string }>(items: T[]) {
+    return [...items].sort((a, b) => {
+        const orderA = normalizeOrder(a?.order);
+        const orderB = normalizeOrder(b?.order);
+        if (orderA !== null && orderB !== null) return orderA - orderB;
+        if (orderA !== null) return -1;
+        if (orderB !== null) return 1;
+        const titleA = (a?.title?.en || a?.title?.tr || a?.slug || '').toLowerCase();
+        const titleB = (b?.title?.en || b?.title?.tr || b?.slug || '').toLowerCase();
+        return titleA.localeCompare(titleB);
+    });
+}
+
+function normalizeOrder(value: unknown) {
+    const numberValue = typeof value === 'number' ? value : Number(value);
+    return Number.isFinite(numberValue) ? numberValue : null;
 }

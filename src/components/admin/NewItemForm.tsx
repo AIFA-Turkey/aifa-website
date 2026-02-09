@@ -15,6 +15,7 @@ type NewItemData = {
     slug?: string;
     name?: string;
     id?: string;
+    order?: number;
 };
 
 const EMPTY_ITEM: NewItemData = {
@@ -33,7 +34,15 @@ const slugify = (value: string) => {
         .replace(/^-+|-+$/g, '');
 };
 
-export default function NewItemForm({ type, existingSlugs }: { type: string; existingSlugs: string[] }) {
+export default function NewItemForm({
+    type,
+    existingSlugs,
+    nextOrder
+}: {
+    type: string;
+    existingSlugs: string[];
+    nextOrder?: number;
+}) {
     const router = useRouter();
     const [data, setData] = useState<NewItemData>(EMPTY_ITEM);
     const [slug, setSlug] = useState('');
@@ -82,6 +91,9 @@ export default function NewItemForm({ type, existingSlugs }: { type: string; exi
                 name: cleanedSlug,
                 id: cleanedSlug
             };
+            if (typeof nextOrder === 'number') {
+                payload.order = nextOrder;
+            }
             await updateItem(type, cleanedSlug, payload);
             router.push(`/admin/${type}`);
             router.refresh();

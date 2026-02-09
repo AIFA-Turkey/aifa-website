@@ -14,6 +14,10 @@ export default async function NewItemPage({ params }: { params: Promise<{ type: 
 
     const items = await getItems(type);
     const existingSlugs = items.map((item: any) => item.slug);
+    const orders = items
+        .map((item: any) => (typeof item.order === 'number' ? item.order : Number(item.order)))
+        .filter((value: number) => Number.isFinite(value));
+    const nextOrder = orders.length ? Math.max(...orders) + 1 : items.length;
 
     return (
         <div>
@@ -24,7 +28,7 @@ export default async function NewItemPage({ params }: { params: Promise<{ type: 
                 <h1 className="text-2xl font-bold">New {type.slice(0, 1).toUpperCase() + type.slice(1)} Item</h1>
             </div>
 
-            <NewItemForm type={type} existingSlugs={existingSlugs} />
+            <NewItemForm type={type} existingSlugs={existingSlugs} nextOrder={nextOrder} />
         </div>
     );
 }
