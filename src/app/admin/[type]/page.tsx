@@ -10,9 +10,12 @@ export default async function ListPage({ params }: { params: Promise<{ type: str
         <div>
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold capitalize bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">{type}</h1>
-                <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded hover:from-blue-500 hover:to-purple-500 opacity-50 cursor-not-allowed shadow transition-all" title="Use create-content script for now">
-                    New Item (Use Script)
-                </button>
+                <Link
+                    href={`/admin/${type}/new`}
+                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded hover:from-blue-500 hover:to-purple-500 shadow transition-all"
+                >
+                    New Item
+                </Link>
             </div>
 
             <div className="bg-[#0b1021]/50 backdrop-blur border border-white/5 rounded-lg shadow-xl overflow-hidden">

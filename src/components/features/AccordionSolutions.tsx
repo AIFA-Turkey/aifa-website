@@ -1,7 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import type { ComponentType } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import * as LucideIcons from 'lucide-react';
 
 interface AccordionItem {
     slug: string;
@@ -19,6 +22,34 @@ interface AccordionSolutionsProps {
 
 export default function AccordionSolutions({ items, categoryTitle, id }: AccordionSolutionsProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const iconMap = useMemo(
+        () => (LucideIcons as unknown as Record<string, LucideIcon>),
+        []
+    );
+
+    const renderMedia = (item: AccordionItem) => {
+        if (item.image) {
+            return (
+                <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                />
+            );
+        }
+
+        const Icon = item.icon ? iconMap[item.icon] : null;
+        if (Icon) {
+            return <Icon className="w-20 h-20 text-blue-300" />;
+        }
+
+        if (item.icon) {
+            return <span className="text-3xl text-blue-200 font-semibold">{item.icon}</span>;
+        }
+
+        return <span className="text-4xl">🚀</span>;
+    };
 
     return (
         <section id={id} className="min-h-screen flex items-center py-24 relative overflow-hidden">
@@ -91,10 +122,8 @@ export default function AccordionSolutions({ items, categoryTitle, id }: Accordi
                                     className="relative z-10 text-center"
                                 >
                                     {/* Placeholder for Dynamic Icon/Image from CMS */}
-                                    <div className="w-64 h-64 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-xl rounded-3xl border border-white/10 flex items-center justify-center shadow-2xl">
-                                        <span className="text-4xl">
-                                            {items[activeIndex].icon || '🚀'}
-                                        </span>
+                                    <div className="w-64 h-64 mx-auto bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-xl rounded-3xl border border-white/10 flex items-center justify-center shadow-2xl p-6">
+                                        {renderMedia(items[activeIndex])}
                                     </div>
                                 </motion.div>
                             )}

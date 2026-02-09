@@ -5,7 +5,10 @@ import { eq } from 'drizzle-orm';
 export async function getServices() {
     try {
         const results = await db.select().from(schema.services);
-        return results.map(row => row.data);
+        return results.map(row => ({
+            ...(row.data as any),
+            slug: row.slug
+        }));
     } catch (e) {
         console.error("Failed to fetch services from DB", e);
         return [];
@@ -15,7 +18,10 @@ export async function getServices() {
 export async function getProducts() {
     try {
         const results = await db.select().from(schema.products);
-        return results.map(row => row.data);
+        return results.map(row => ({
+            ...(row.data as any),
+            slug: row.slug
+        }));
     } catch (e) {
         console.error("Failed to fetch products from DB", e);
         return [];
@@ -25,7 +31,10 @@ export async function getProducts() {
 export async function getSolutions() {
     try {
         const results = await db.select().from(schema.solutions);
-        return results.map(row => row.data);
+        return results.map(row => ({
+            ...(row.data as any),
+            slug: row.slug
+        }));
     } catch (e) {
         console.error("Failed to fetch solutions from DB", e);
         return [];
