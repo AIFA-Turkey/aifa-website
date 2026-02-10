@@ -8,7 +8,7 @@ import ContactForm from '@/components/features/ContactForm';
 // Helper to localize items
 const localizeItems = (items: any[], locale: string) => {
   return items.map(item => ({
-    slug: item.slug || item.title?.en || Math.random().toString(), // fallback slug
+    slug: item.slug || item.name || item.id || item.title?.en || Math.random().toString(), // fallback slug
     title: item.title[locale] || item.title['en'],
     description: item.description[locale] || item.description['en'],
     image: item.image,

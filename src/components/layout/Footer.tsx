@@ -25,6 +25,31 @@ export default async function Footer({ locale }: { locale: string }) {
         { label: 'Products', href: '/#products' },
     ];
 
+    const quickLinkLabels: Record<string, string> = {
+        services: t('Navigation.services') || 'Services',
+        solutions: t('Navigation.solutions') || 'Solutions',
+        products: t('Navigation.products') || 'Products',
+    };
+
+    const resolveQuickLinkLabel = (item: any) => {
+        const label = item?.label;
+        if (label && typeof label === 'object') {
+            return label[locale] || label.en || label.tr || '';
+        }
+        if (typeof label === 'string') {
+            const key = label.trim().toLowerCase();
+            if (key in quickLinkLabels) {
+                return quickLinkLabels[key];
+            }
+            return label;
+        }
+        const href = String(item?.href || '');
+        if (href.includes('#services')) return quickLinkLabels.services;
+        if (href.includes('#solutions')) return quickLinkLabels.solutions;
+        if (href.includes('#products')) return quickLinkLabels.products;
+        return '';
+    };
+
     return (
         <footer className="bg-[#070a13] border-t border-white/10 py-20 relative overflow-hidden">
             {/* Footer Glow */}
@@ -47,7 +72,7 @@ export default async function Footer({ locale }: { locale: string }) {
                             {footerLinks.map((item: any) => (
                                 <li key={item.href}>
                                     <Link href={item.href} className="text-gray-400 hover:text-blue-400 transition-colors">
-                                        {item.label}
+                                        {resolveQuickLinkLabel(item)}
                                     </Link>
                                 </li>
                             ))}
