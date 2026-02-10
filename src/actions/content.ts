@@ -1,9 +1,22 @@
 'use server';
-
 import { revalidatePath } from 'next/cache';
 import { db } from '@/db';
 import * as schema from '@/db/schema';
 import { eq } from 'drizzle-orm';
+
+export async function deleteItem(type: string, slug: string) {
+    const table = getTable(type);
+    if (!table) return { success: false, error: 'Invalid type' };
+    try {
+        await db.delete(table).where(eq(table.slug, slug));
+        revalidatePath(`/admin/${type}`);
+        revalidatePath('/[locale]', 'layout');
+        return { success: true };
+    } catch (e) {
+        console.error(`Failed to delete item ${type}/${slug}`, e);
+        return { success: false, error: 'Delete failed' };
+    }
+}
 
 export async function getContentTypes() {
     return ['services', 'products', 'solutions'];

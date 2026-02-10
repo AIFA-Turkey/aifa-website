@@ -1,5 +1,6 @@
 import { getItems } from '@/actions/content';
 import Link from 'next/link';
+import { DeleteButton } from '@/components/admin/DeleteButton';
 
 export default async function ListPage({ params }: { params: Promise<{ type: string }> }) {
     const { type } = await params;
@@ -30,11 +31,12 @@ export default async function ListPage({ params }: { params: Promise<{ type: str
                                 <td className="px-6 py-4 font-mono text-sm text-gray-400">{item.slug}</td>
                                 <td className="px-6 py-4 text-gray-300">{item.title.en}</td>
                                 <td className="px-6 py-4 text-gray-300">{item.title.tr}</td>
-                                <td className="px-6 py-4 text-right">
-                                    <Link href={`/admin/${type}/${item.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline font-medium transition-colors">
-                                        Edit
-                                    </Link>
-                                </td>
+                                    <td className="px-6 py-4 text-right">
+                                        <Link href={`/admin/${type}/${item.slug}`} className="text-blue-400 hover:text-blue-300 hover:underline font-medium transition-colors">
+                                            Edit
+                                        </Link>
+                                        <DeleteButton type={type} slug={item.slug} />
+                                    </td>
                             </tr>
                         ))}
                     </tbody>
